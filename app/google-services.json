@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "148410316789",
+    "project_id": "todo-app-3cf83",
+    "storage_bucket": "todo-app-3cf83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148410316789:android:55840075df3df54cae92bc",
+        "android_client_info": {
+          "package_name": "com.app.quizmemory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBkQ_2vUQnthXtVUcFzs1UV_WlOppOnnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
