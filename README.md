@@ -1,4 +1,4 @@
-🌟 Quiz App – Challenge Your Brain, One Question at a Time!
+<h1>🌟 Quiz App – Challenge Your Brain, One Question at a Time!</h1>
 Welcome to the Quiz App – a fun and interactive way to test your knowledge across various topics! Whether you're a trivia master or just want to challenge yourself, this app brings you a fast-paced quiz experience. 🎯
 _______________________________
 🚀 Features at a Glance
@@ -8,7 +8,7 @@ _______________________________
 
 📊 Real-Time Scoring – Keep track of your correct answers and overall performance.
 _______________________________
-📝 How It Works
+<h2>📝 How It Works</h2>
 ----------
 Choose a Category & Difficulty: Select from a variety of topics and set the quiz difficulty to Easy, Medium, or Hard.
 
