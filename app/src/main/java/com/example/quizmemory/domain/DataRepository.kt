@@ -11,5 +11,4 @@ class DataRepository  {
     suspend fun getQuizData(category: String, difficulty: String) = helper.getQuizApi(category = category, difficulty = difficulty)
 
 
-
 }

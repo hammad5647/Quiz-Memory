@@ -13,10 +13,11 @@ class QuizViewModel : ViewModel() {
 
     private var questionData = MutableLiveData<MutableList<QuizQuestionModel>>()
     var question: LiveData<MutableList<QuizQuestionModel>> = questionData
-    var selectedAnswer : String? = null
 
-    var totalCorrectAnswers : Int = 0
-    var totalWrongAnswers : Int = 0
+    var selectedAnswer: String? = null
+
+    var totalCorrectAnswers: Int = 0
+    var totalWrongAnswers: Int = 0
 
     private var _quizNumber = MutableLiveData(0)
     var quizNumber: LiveData<Int> = _quizNumber
@@ -44,20 +45,16 @@ class QuizViewModel : ViewModel() {
         if (_quizNumber.value!! < 9) {
             correctAnswers()
             _quizNumber.value = _quizNumber.value!! + 1
-        }
-        else {
+        } else {
             correctAnswers()
-//            Log.d("correctAnswers", "correctAnswers:  $totalCorrectAnswers")
-//            Log.e("IncorrectAnswers", "IncorrectAnswers: $totalWrongAnswers")
         }
     }
 
     private fun correctAnswers() {
-        if(question.value?.get(quizNumber.value!!)?.correctAnswer == selectedAnswer){
+        if (question.value?.get(quizNumber.value!!)?.correctAnswer == selectedAnswer) {
             totalCorrectAnswers++
-        }else{
+        } else {
             totalWrongAnswers++
         }
     }
-
 }

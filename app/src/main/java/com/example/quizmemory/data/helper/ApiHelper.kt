@@ -12,7 +12,7 @@ class ApiHelper {
         val apiInterface: ApiInterface = getQuiz().create(ApiInterface::class.java)
         val response = apiInterface.getApi(category = category, difficulty = difficulty).awaitResponse()
         if (response.isSuccessful){
-            Log.e("Success", "getQuizApi:${response.body()} ", )
+            Log.e("Success", "getQuizApi:${response.body()} ")
             return response.body()
         }
         return null

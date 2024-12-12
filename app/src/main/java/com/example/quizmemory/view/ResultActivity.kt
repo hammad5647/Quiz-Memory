@@ -26,11 +26,10 @@ class ResultActivity : AppCompatActivity() {
         binding.correctAnswer.text = intent.getIntExtra("correctAnswer", 0).toString()
         binding.incorrectAnswer.text = intent.getIntExtra("incorrectAnswer", 0).toString()
 
-        if (binding.correctAnswer.text.toString().toInt() >= 6) {
+        if (binding.correctAnswer.text.toString().toInt() >= 5) {
             partyTime()
         }else{
-            binding.imageView4.setImageResource(R.drawable.won)
-            partyTime()
+            binding.imageView4.setImageResource(R.drawable.lose)
         }
     }
     private fun clickInit(){

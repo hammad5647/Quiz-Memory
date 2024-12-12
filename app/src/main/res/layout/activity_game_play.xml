@@ -13,7 +13,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/option_bg"
         android:clickable="true"
         android:padding="8dp"
@@ -45,9 +45,22 @@
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="60dp"
         app:cardCornerRadius="100dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/backBtn">
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:trackThickness="12dp"
+            app:trackColor="#ffffff"
+            app:indicatorColor="#007EE6"
+            android:max="30"
+            android:progress="0"
+            />
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"

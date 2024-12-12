@@ -35,7 +35,6 @@ class GamePlayActivity : AppCompatActivity() {
         getIntentData()
         loadingDialog()
         initClick()
-
     }
 
     private fun observers() {
@@ -57,12 +56,13 @@ class GamePlayActivity : AppCompatActivity() {
             binding.txtOptD.text = viewModel.question.value?.get(it)?.options?.get(3)
         }
     }
-
     private fun timerCountdown() {
         countDown = object : CountDownTimer(30000, 1000) {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
                 binding.quizSeconds.text = (millisUntilFinished / 1000).toString()
+                binding.progressIndicator.progress =
+                    (millisUntilFinished / 1000).toInt()
             }
 
             @SuppressLint("SetTextI18n")
@@ -72,7 +72,7 @@ class GamePlayActivity : AppCompatActivity() {
                 countDown!!.cancel()
                 countDown!!.start()
             }
-        }.start()
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -88,6 +88,7 @@ class GamePlayActivity : AppCompatActivity() {
 
             noBtn.setOnClickListener {
                 dialog.dismiss()
+
             }
             yesBtn.setOnClickListener {
                 dialog.dismiss()
@@ -137,7 +138,7 @@ class GamePlayActivity : AppCompatActivity() {
         }
         binding.nextQtnBtn.setOnClickListener {
             viewModel.nextQuiz()
-            binding.questionNumber.text = "${viewModel.quizNumber.value!!+1}/10"
+            binding.questionNumber.text = "${viewModel.quizNumber.value!! + 1}/10"
             countDown!!.cancel()
             countDown!!.start()
             binding.optionBLayout.setBackgroundResource(R.drawable.option_bg)
@@ -151,12 +152,12 @@ class GamePlayActivity : AppCompatActivity() {
         }
         binding.submitBtn.setOnClickListener {
             viewModel.nextQuiz()
-            val intent = Intent(this,ResultActivity::class.java)
-            Log.e("correct", "initClick: ${viewModel.totalCorrectAnswers}", )
-            Log.e("incorrect", "initClick: ${viewModel.totalWrongAnswers}",)
+            val intent = Intent(this, ResultActivity::class.java)
+            Log.e("correct", "initClick: ${viewModel.totalCorrectAnswers}")
+            Log.e("incorrect", "initClick: ${viewModel.totalWrongAnswers}")
 
-            intent.putExtra("correctAnswer",viewModel.totalCorrectAnswers)
-            intent.putExtra("incorrectAnswer",viewModel.totalWrongAnswers)
+            intent.putExtra("correctAnswer", viewModel.totalCorrectAnswers)
+            intent.putExtra("incorrectAnswer", viewModel.totalWrongAnswers)
             startActivity(intent)
         }
     }
@@ -177,5 +178,6 @@ class GamePlayActivity : AppCompatActivity() {
         dialog.setCancelable(false)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.show()
+
     }
 }
