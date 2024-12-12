@@ -67,6 +67,7 @@ class GamePlayActivity : AppCompatActivity() {
 
             @SuppressLint("SetTextI18n")
             override fun onFinish() {
+                binding.questionNumber.text = "${viewModel.quizNumber.value!! + 1}/10"
                 binding.quizSeconds.text = "0"
                 viewModel.nextQuiz()
                 countDown!!.cancel()

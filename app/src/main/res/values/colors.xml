@@ -140,4 +140,5 @@
     <color name="md_theme_surfaceContainer_highContrast">#EAEFF1</color>
     <color name="md_theme_surfaceContainerHigh_highContrast">#E4E9EC</color>
     <color name="md_theme_surfaceContainerHighest_highContrast">#DEE3E6</color>
+    <color name="ic_launcher_background">#09b4d9</color>
 </resources>
